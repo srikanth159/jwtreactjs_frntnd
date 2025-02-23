@@ -21,8 +21,8 @@ const Dashboard = () => {
                 const headers = { Authorization: `Bearer ${token}` };
 
                 const users = await axios.get('http://localhost:5000/api/users', { headers });
-                const videos = await axios.get('http://localhost:5000/api/videos', { headers });
-                const categories = await axios.get('http://localhost:5000/api/categories', { headers });
+                const videos = await axios.get('http://localhost:5000/api/videos/videos', { headers });
+                const categories = await axios.get('http://localhost:5000/api/categories/category', { headers });
 
                 setStats({
                     users: users.data.length,

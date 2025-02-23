@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import '../App.css';
 ; // Make sure to import your CSS file
 
-const Login = () => {
+const Login = ({ setIsAuthenticated }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
@@ -26,6 +26,7 @@ const Login = () => {
             axios.defaults.headers.common["Authorization"] = `Bearer ${res.data.token}`;
 
             alert("Login successful!");
+             setIsAuthenticated(true) 
             navigate("/dashboard");
         } catch (err) {
             setError(err.response?.data?.message || "Login failed");
