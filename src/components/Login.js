@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import '../App.css';
-; // Make sure to import your CSS file
+
 
 const Login = ({ setIsAuthenticated }) => {
     const [email, setEmail] = useState("");
